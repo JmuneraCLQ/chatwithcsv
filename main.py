@@ -17,7 +17,7 @@ uploaded_file = st.file_uploader("Choose a CSV file", type="csv")
 api_key = st.text_input("Enter your OpenAI API key", type="password")
 
 # Model selection
-model_options = ["gpt-3.5-turbo-0125","gpt-4-turbo"]
+model_options = ["gpt-3.5-turbo-0125","gpt-4-turbo","GPT-4o mini"]
 selected_model = st.selectbox("Select a GPT model", model_options)
 
 if uploaded_file and api_key:
@@ -56,7 +56,7 @@ if uploaded_file and api_key:
         # Display chat history
                 # Display chat history
         for question, answer in st.session_state.chat_history:
-            st.chat_message("user").text(question)
+           ## st.chat_message("user").text(question)
             st.chat_message("assistant").json(answer)
 
     except Exception as e:

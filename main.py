@@ -17,7 +17,7 @@ uploaded_file = st.file_uploader("Choose a CSV file", type="csv")
 api_key = st.text_input("Enter your OpenAI API key", type="password")
 
 # Model selection
-model_options = ["gpt-3.5-turbo-0125","gpt-4-turbo","GPT-4o"]
+model_options = ["gpt-3.5-turbo-0125","gpt-4-turbo","gpt-4o"]
 selected_model = st.selectbox("Select a GPT model", model_options)
 
 if uploaded_file and api_key:

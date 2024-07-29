@@ -33,6 +33,7 @@ if uploaded_file and api_key:
             llm,
             df,
             verbose=True,
+            allow_dangerous_code=True
             agent_type=AgentType.OPENAI_FUNCTIONS,
             handle_parsing_errors=True  # Add this line to handle parsing errors
         )

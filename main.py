@@ -7,7 +7,7 @@ from langchain_openai import ChatOpenAI
 
 
 # Streamlit app
-st.title("Chat with CSV files")
+st.title("Chat con el archivo de Mis Ideas")
 
 st.write("Upload a CSV file, enter your OpenAI API key, and select a model to chat with your data using GPT models.")
 

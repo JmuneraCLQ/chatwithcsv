@@ -4,7 +4,13 @@ import matplotlib.pyplot as plt
 from langchain.agents.agent_types import AgentType
 from langchain_experimental.agents.agent_toolkits import create_pandas_dataframe_agent
 from langchain_openai import ChatOpenAI
+# Setting up the api key
+import environ
 
+env = environ.Env()
+environ.Env.read_env()
+
+API_KEY = env("apikey")
 
 # Streamlit app
 st.title("Chat con el archivo de Mis Ideas")
@@ -15,19 +21,19 @@ st.write("Upload a CSV file, enter your OpenAI API key, and select a model to ch
 uploaded_file = st.file_uploader("Choose a CSV file", type="csv")
 
 # API key input
-api_key = st.text_input("Enter your OpenAI API key", type="password")
+#api_key = st.text_input("Enter your OpenAI API key", type="password")
 
 # Model selection
 # model_options = ["gpt-3.5-turbo-0125","gpt-4-turbo","gpt-4o"]
 # selected_model = st.selectbox("Select a GPT model", model_options)
 
-if uploaded_file and api_key:
+if uploaded_file :
     try:
         # Read the uploaded CSV file
         df = pd.read_csv(uploaded_file)
 
         # Initialize the language model
-        llm = ChatOpenAI(temperature=0, model="gpt-4-turbo", api_key=api_key)
+        llm = ChatOpenAI(temperature=0, model="gpt-4-turbo", api_key=API_KEY)
 
         # Create the dataframe agent
         agent = create_pandas_dataframe_agent(

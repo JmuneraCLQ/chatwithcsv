@@ -34,7 +34,7 @@ if uploaded_file :
         df = pd.read_csv(uploaded_file)
 
         # Initialize the language model
-        llm = ChatOpenAI(temperature=0, model="gpt-4o", api_key=API_KEY)
+        llm = ChatOpenAI(temperature=0, model="gpt-4-turbo", api_key=API_KEY)
 
         # Create the dataframe agent
         agent = create_pandas_dataframe_agent(

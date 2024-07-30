@@ -68,7 +68,7 @@ if uploaded_file :
                 # Display chat history
         for question, answer in st.session_state.chat_history:
            ## st.chat_message("Pregunta").text(question)
-            st.chat_message("ChatGPT").json(answer)
+            st.chat_message("assistant").json(answer)
 
     except Exception as e:
         st.error(f"Error initializing the model or processing the file: {e}")

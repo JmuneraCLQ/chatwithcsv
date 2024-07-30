@@ -59,7 +59,7 @@ if uploaded_file :
         if user_question:
             try:
                 # Get the response from the agent
-                response = agent.run(user_question)
+                response = agent.evoke(user_question)
                 st.session_state.chat_history.append((user_question, response))
             except Exception as e:
                 st.error(f"Error running query: {e}")

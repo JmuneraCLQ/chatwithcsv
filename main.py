@@ -40,7 +40,7 @@ if uploaded_file :
         agent = create_pandas_dataframe_agent(
             llm,
             df,
-            verbose=True,
+            verbose=False,
             allow_dangerous_code=True,
             agent_type=AgentType.OPENAI_FUNCTIONS,
             handle_parsing_errors=True  # Add this line to handle parsing errors
@@ -59,7 +59,7 @@ if uploaded_file :
         if user_question:
             try:
                 # Get the response from the agent
-                response = agent.invoke(user_question)
+                response = agent.run(user_question)
                 st.session_state.chat_history.append((user_question, response))
             except Exception as e:
                 st.error(f"Error running query: {e}")

@@ -45,48 +45,15 @@ if uploaded_file and api_key:
 
         # Chat message input
         user_question = st.chat_input("Ask a question about the data:")
-        prompt = (
-        """
-            For the following query, if it requires drawing a table, reply as follows:
-            {"table": {"columns": ["column1", "column2", ...], "data": [[value1, value2, ...], [value1, value2, ...], ...]}}
-
-            If the query requires creating a bar chart, reply as follows:
-            {"bar": {"columns": ["A", "B", "C", ...], "data": [25, 24, 10, ...]}}
-            
-            If the query requires creating a line chart, reply as follows:
-            {"line": {"columns": ["A", "B", "C", ...], "data": [25, 24, 10, ...]}}
-            
-            There can only be two types of chart, "bar" and "line".
-            
-            If it is just asking a question that requires neither, reply as follows:
-            {"answer": "answer"}
-            Example:
-            {"answer": "The title with the highest rating is 'Gilead'"}
-            
-            If you do not know the answer, reply as follows:
-            {"answer": "I do not know."}
-            
-            Return all output as a string.
-            
-            All strings in "columns" list and data list, should be in double quotes,
-            
-            For example: {"columns": ["title", "ratings_count"], "data": [["Gilead", 361], ["Spider's Web", 5164]]}
-            
-            Lets think step by step.
-            
-            Below is the query.
-            Query: 
-            """
-        + user_question
-    )
+ 
 
 
         
         if user_question:
             try:
                 # Get the response from the agent
-                response = agent.invoke(prompt)
-                st.session_state.chat_history.append((prompt, response))
+                response = agent.invoke(user_question)
+                st.session_state.chat_history.append((user_question, response))
             except Exception as e:
                 st.error(f"Error running query: {e}")
 

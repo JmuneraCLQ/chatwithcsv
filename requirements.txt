@@ -5,3 +5,4 @@ langchain-experimental
 langchain-openai
 tabulate
 matplotlib
+python-environ

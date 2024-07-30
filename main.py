@@ -18,8 +18,8 @@ uploaded_file = st.file_uploader("Choose a CSV file", type="csv")
 api_key = st.text_input("Enter your OpenAI API key", type="password")
 
 # Model selection
-model_options = ["gpt-3.5-turbo-0125","gpt-4-turbo","gpt-4o"]
-selected_model = st.selectbox("Select a GPT model", model_options)
+# model_options = ["gpt-3.5-turbo-0125","gpt-4-turbo","gpt-4o"]
+# selected_model = st.selectbox("Select a GPT model", model_options)
 
 if uploaded_file and api_key:
     try:
@@ -27,7 +27,7 @@ if uploaded_file and api_key:
         df = pd.read_csv(uploaded_file)
 
         # Initialize the language model
-        llm = ChatOpenAI(temperature=0, model=selected_model, api_key=api_key)
+        llm = ChatOpenAI(temperature=0, model="gpt-4-turbo", api_key=api_key)
 
         # Create the dataframe agent
         agent = create_pandas_dataframe_agent(

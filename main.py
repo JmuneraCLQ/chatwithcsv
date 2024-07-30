@@ -44,7 +44,7 @@ if uploaded_file and api_key:
             st.session_state.chat_history = []
 
         # Chat message input
-        user_question = st.chat_input("Ask a question about the data:")
+        user_question = st.chat_input("Pregunteme sobre los datos del archivo:")
  
 
 
@@ -60,8 +60,8 @@ if uploaded_file and api_key:
         # Display chat history
                 # Display chat history
         for question, answer in st.session_state.chat_history:
-           ## st.chat_message("user").text(question)
-            st.chat_message("assistant").json(answer)
+           ## st.chat_message("Pregunta").text(question)
+            st.chat_message("ChatGPT").json(answer)
 
     except Exception as e:
         st.error(f"Error initializing the model or processing the file: {e}")

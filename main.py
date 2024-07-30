@@ -16,10 +16,10 @@ API_KEY = env("apikey")
 # Streamlit app
 st.title("Chat con el archivo de Mis Ideas")
 
-st.write("Upload a CSV file, enter your OpenAI API key, and select a model to chat with your data using GPT models.")
+# st.write("Upload a CSV file, enter your OpenAI API key, and select a model to chat with your data using GPT models.")
 
 # File uploader
-uploaded_file = st.file_uploader("Choose a CSV file", type="csv")
+uploaded_file = "Ideas_2024_V1.csv"
 
 # API key input
 #api_key = st.text_input("Enter your OpenAI API key", type="password")

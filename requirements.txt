@@ -1,5 +1,5 @@
 streamlit
-matplotlib
+matplotlib==3.6.2
 extra_streamlit_components
 langchain
 pandas

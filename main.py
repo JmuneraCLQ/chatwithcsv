@@ -1,5 +1,5 @@
 import streamlit as st
-import extra_streamlit_components as st1
+import extra_streamlit_components as stx
 import pandas as pd
 import matplotlib.pyplot as plt
 from langchain.agents.agent_types import AgentType

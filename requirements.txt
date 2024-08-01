@@ -1,9 +1,9 @@
 streamlit
+matplotlib
 extra_streamlit_components
 langchain
 pandas
 langchain-experimental
 langchain-openai
 tabulate
-matplotlib
 python-environ

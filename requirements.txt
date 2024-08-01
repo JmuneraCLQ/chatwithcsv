@@ -1,6 +1,6 @@
 streamlit
 matplotlib==3.6.2
-extra_streamlit_components
+streamlit_cookies_manager
 langchain
 pandas
 langchain-experimental

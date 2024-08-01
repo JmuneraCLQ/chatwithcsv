@@ -1,6 +1,5 @@
 streamlit
 matplotlib==3.6.2
-streamlit_cookies_manager
 langchain
 pandas
 langchain-experimental
